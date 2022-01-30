@@ -46,7 +46,7 @@ module.exports.routes = {
   'GET /get-admin-by-password/:password': 'AdminController.findByPassword',
   'POST /login-admin/': 'Admin/loginAdmin',
 
-//coment
+//coment bla bla bla
   'POST /post-coment/': 'Coment/createComent',
   'PUT /update-coment/:id': 'Coment/updateComent',
   'DELETE /delete-coment/:id': 'Coment/deleteComent',
