@@ -1,60 +1,59 @@
 /**
- * ComentController
+ * CommentController
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-module.exports = {
-  
+module.exports = {  
 
-    createComent: async (req, res) => {
+    createComment: async (req, res) => {
         const data = req.body;
 
         try {
-            const coment = await Coment.create({
-            coment: data.coment,
+            const comment = await Comment.create({
+            comment: data.comment,
             genre: data.genre,
             name: data.name,
             productId: data.productId
                 
             }).fetch();
-            res.send(coment);
+            res.send(comment);
         } catch (error) {
             res.status(200).send(error);
         }
     },
 
-    updateComent: async (req, res) => {
+    updateComment: async (req, res) => {
         const data = req.allParams();
 
         try {
-            const coment = await Coment.update({ id: data.id }).set({
-                coment: data.coment
+            const comment = await Comment.update({ id: data.id }).set({
+                comment: data.comment
                 
             }).fetch();
-            res.send(coment);
+            res.send(comment);
         } catch (error) {
             res.status(200).send(error);
         }
     },
 
-    deleteComent: async (req, res) => {
+    deleteComment: async (req, res) => {
         const data = req.params;
 
         try {
-            const coment = await Coment.destroy({
+            const comment = await Comment.destroy({
                 id: data.id
             }).fetch();
-            res.send(coment);
+            res.send(comment);
         } catch (error) {
             res.status(200).send(error);
         }
     },
-    getComent: function (req, res) {
-        Coment.find()
-            .then(function (coment) {
-                if (!coment || coment.lenght === 0) {
+    getComment: function (req, res) {
+        Comment.find()
+            .then(function (comment) {
+                if (!comment || comment.lenght === 0) {
                     return res.send({
                         'succes': false,
                         'message': 'no records found'
@@ -63,7 +62,7 @@ module.exports = {
                 return res.send({
                     'succes': true,
                     'message': 'records fetched',
-                    'data': coment
+                    'data': comment
                 })
             })
             .catch(function (error) {
@@ -75,12 +74,12 @@ module.exports = {
                 })
             });
     },
-    getComentByProductId: function (req, res) {
-        Coment.find({
+    getCommentByProductId: function (req, res) {
+        Comment.find({
             productId: req.params.productId
         })
-            .then(function (coment) {
-                if (!coment || coment.lenght === 0) {
+            .then(function (comment) {
+                if (!comment || comment.lenght === 0) {
                     return res.send({
                         'succes': false,
                         'message': 'no records found'
@@ -89,7 +88,7 @@ module.exports = {
                 return res.send({
                     'succes': true,
                     'message': 'records fetched',
-                    'data': coment
+                    'data': comment
                 })
             })
             .catch(function (error) {
@@ -103,33 +102,33 @@ module.exports = {
     },
      async findOne(req, res) {
         try {
-            const coment = await Coment.findOne({
+            const comment = await Comment.findOne({
                 id: req.params.id
             });
-            return res.ok(coment);
+            return res.ok(comment);
         } catch (error) {
             return res.serverError(error);
         }
     },
     
-    deleteComentByProductId: async (req, res) => {
+    deleteCommentByProductId: async (req, res) => {
         const data = req.params;
 
         try {
-            const coment = await Coment.destroy({
+            const comment = await Comment.destroy({
                 productId: data.productId
             }).fetch();
-            res.send(coment);
+            res.send(comment);
         } catch (error) {
             res.status(200).send(error);
         }
     },
     async findOneByName(req, res) {
         try {
-            const coment = await Coment.findOne({
+            const comment = await Comment.findOne({
                 name: req.params.name
             });
-            return res.ok(coment);
+            return res.ok(comment);
         } catch (error) {
             return res.serverError(error);
         }

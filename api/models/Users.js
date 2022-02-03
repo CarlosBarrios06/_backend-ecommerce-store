@@ -10,8 +10,9 @@ module.exports = {
   attributes: {
     name: { type: 'String', required: true, columnName: 'name' },
     email: { type: 'String', columnName: 'email' },
-    password: { type: 'string', columnName: 'password' }
-
+    password: { type: 'String', columnName: 'password' },
+    role: { type: 'String', columnName: 'role' },
+    
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗

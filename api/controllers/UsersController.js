@@ -14,6 +14,7 @@ module.exports = {
                 name: data.name,
                 email: data.email,
                 password: data.password,
+                role:data.role,
             }).fetch();
             res.send(user);
         } catch (error) {
@@ -28,7 +29,8 @@ module.exports = {
             const user = await Users.update({ id: data.id }).set({
                 name: data.name,
                 email: data.email,
-                password: data.password
+                password: data.password,
+                role:data.role,
             }).fetch();
             res.send(user);
         } catch (error) {
@@ -103,9 +105,16 @@ module.exports = {
         } catch (error) {
             res.status(200).send(error);
         }
+    },
+    veryfyToChangePassword: async (req, res) => {
+        let data = req.body;
+        try {
+            const existingUser = await Users.find({email: data.email, password: data.password});
+            res.send(existingUser);
+        } catch (error) {
+            res.status(200).send(error);
+        }
     }
-
-
 
 
 };

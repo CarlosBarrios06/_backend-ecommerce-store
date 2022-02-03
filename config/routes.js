@@ -17,6 +17,7 @@ module.exports.routes = {
   'GET /get-user/:id': 'UsersController.findOne',
   'POST /login/': 'Users/login',
   'POST /verify-user/': 'Users/veryfyUser',
+  'POST /verify-password/':'Users/veryfyToChangePassword', 
 
   //PRODUCT
   'POST /create-product': 'Products/createProduct',
@@ -46,15 +47,15 @@ module.exports.routes = {
   'GET /get-admin-by-password/:password': 'AdminController.findByPassword',
   'POST /login-admin/': 'Admin/loginAdmin',
 
-//coment bla bla bla
-  'POST /post-coment/': 'Coment/createComent',
-  'PUT /update-coment/:id': 'Coment/updateComent',
-  'DELETE /delete-coment/:id': 'Coment/deleteComent',
-  'GET /get-comentaries': 'Coment/getComent',
-  'GET /get-coment/:id': 'ComentController.findOne',
-  'GET /get-coment-by-product-id/:productId': 'ComentController.getComentByProductId',
-  'DELETE /delete-coments/:productId': 'Coment/deleteComentByProductId',
-  'GET /get-coment-by-name/:name': 'ComentController.findOneByName',
+//coment
+  'POST /post-comment/': 'Comment/createComment',
+  'PUT /update-comment/:id': 'Comment/updateComment',
+  'DELETE /delete-comment/:id': 'Comment/deleteComment',
+  'GET /get-comments': 'Comment/getComment',
+  'GET /get-comment/:id': 'CommentController.findOne',
+  'GET /get-comment-by-product-id/:productId': 'CommentController.getCommentByProductId',
+  'DELETE /delete-comments/:productId': 'Comment/deleteCommentByProductId',
+  'GET /get-comment-by-name/:name': 'CommentController.findOneByName',
   // 'POST /upload-img/': 'Img/upload',
 
 
