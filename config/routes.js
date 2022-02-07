@@ -17,7 +17,7 @@ module.exports.routes = {
   'GET /get-user/:id': 'UsersController.findOne',
   'POST /login/': 'Users/login',
   'POST /verify-user/': 'Users/veryfyUser',
-  'POST /verify-password/':'Users/veryfyToChangePassword', 
+  'POST /verify-password/':'Users/veryfyToChangePassword',
 
   //PRODUCT
   'POST /create-product': 'Products/createProduct',

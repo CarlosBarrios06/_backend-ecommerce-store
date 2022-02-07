@@ -114,8 +114,8 @@ module.exports = {
         } catch (error) {
             res.status(200).send(error);
         }
-    }
-
+    },
+   
 
 };
 
